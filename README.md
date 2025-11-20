@@ -18,18 +18,20 @@ This end-to-end pipeline can be extended to cloud workflows (AWS/GCP), job sched
 
 ## 🏗️ Architecture
 
-```markdown
-## 🏗️ Architecture
-
 ```mermaid
 flowchart TD
-    A[Fetch Repositories (GitHub API)] --> B[Process Data (pandas)]
-    B --> C[Save CSV Files]
-    C --> D[Upload CSV via GitHub Content API]
-    D --> E[Target Repository (github-language-analysis)]
+    A[Fetch Repos] --> B[Process Data]
+    B --> C[Save CSV]
+    C --> D[Upload to GitHub]
+    D --> E[Language Analysis Repo]
+```
 
 
-## **Project Structure**
+---
+
+## 📁 Project Structure
+
+```text
 github-data-pipeline/
 │
 ├── src/
@@ -42,13 +44,15 @@ github-data-pipeline/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
 
+---
 
-⚙️ **Technologies Used**
-- Python 3.10+
-- pandas — data transformation
-- requests — API requests
-- base64 — encoding for GitHub content uploads
-- GitHub REST API (v3)
-- Virtual environment (venv) — dependency isolation
+## ⚙️ Technologies Used
 
+- Python 3.10+  
+- pandas — data transformation  
+- requests — API requests  
+- base64 — encoding for GitHub content uploads  
+- GitHub REST API (v3)  
+- Virtual environment (venv) — dependency isolation  
